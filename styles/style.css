@@ -139,3 +139,7 @@ main {
     font-family: cursive;
     text-align: center;
 }
+
+.character img {
+    height: 200px;
+}
