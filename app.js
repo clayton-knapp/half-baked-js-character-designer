@@ -15,12 +15,13 @@ const catchphraseInput = document.getElementById('catchphrase-input');
 const catchphraseButton = document.getElementById('catchphrase-button');
 
 // set state for how many times the user changes the head, middle, and bottom
-let statsReport = 0;
 let headChangeCount = 0;
 let middleChangeCount = 0;
 let bottomChangeCount = 0;
 // set state for all of the character's catchphrases
 let catchphraseArray = [];
+
+//EVENT LISTENERS
 
 headDropdown.addEventListener('change', () => {
     // get the value of the head dropdown
@@ -69,14 +70,14 @@ catchphraseButton.addEventListener('click', () => {
     // push the new catchphrase to the catchphrase array in state
     catchphraseArray.push(userCatchphrase);
 
-    // update the dom for the bottom (?????????????????????????????????????????)
-
     // clear out the form input's value so it's empty to the user
     catchphraseInput.value = '';
 
     // update the dom to show the new catchphrases (call a function to do this work)
     displayCatchphrases();
 });
+
+//FUNCTIONS
 
 function displayStats() {
     // change the text content of the reportEl to tell the user how many times they've changed each piece of the state
