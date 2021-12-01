@@ -37,6 +37,7 @@ headDropdown.addEventListener('change', () => {
     headEl.textContent = '';
     const imageEl = document.createElement('img');
     imageEl.src = `./assets/${headSelected}-head.png`;
+    imageEl.style.height = '200px';
     headEl.append(imageEl);
 
 
@@ -55,6 +56,7 @@ middleDropdown.addEventListener('change', () => {
     middleEl.textContent = '';
     const imageEl = document.createElement('img');
     imageEl.src = `./assets/${middleSelected}-middle.png`;
+    imageEl.style.height = '200px';
     middleEl.append(imageEl);
 
 
@@ -73,6 +75,7 @@ bottomDropdown.addEventListener('change', () => {
     bottomEl.textContent = '';
     const imageEl = document.createElement('img');
     imageEl.src = `./assets/${bottomSelected}-pants.png`;
+    imageEl.style.height = '200px';
     bottomEl.append(imageEl);
 
 
