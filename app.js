@@ -34,8 +34,7 @@ headDropdown.addEventListener('change', () => {
     // update the dom for the head
     headEl.src = `./assets/${headSelected}-head.png`;
     // update the stats to show the new count
-    reportEl.textContent = '';
-    reportEl.append(`You've changed the head ${headChangeCount} times. You've changed the middle ${middleChangeCount} time. You've changed the bottom ${bottomChangeCount} times.`);
+    displayStats();
 });
 
 
@@ -47,8 +46,7 @@ middleDropdown.addEventListener('change', () => {
     // update the dom for the middle
     middleEl.src = `./assets/${middleSelected}-middle.png`;
     // update the stats to show the new count
-    reportEl.textContent = '';
-    reportEl.append(`You've changed the head ${headChangeCount} times. You've changed the middle ${middleChangeCount} time. You've changed the bottom ${bottomChangeCount} times.`);
+    displayStats();
 });
 
 
@@ -60,8 +58,8 @@ bottomDropdown.addEventListener('change', () => {
     // update the dom for the bottom
     bottomEl.src = `./assets/${bottomSelected}-pants.png`;
     // update the stats to show the new count
-    reportEl.textContent = '';
-    reportEl.append(`You've changed the head ${headChangeCount} times. You've changed the middle ${middleChangeCount} time. You've changed the bottom ${bottomChangeCount} times.`);
+    displayStats();
+
 });
 
 catchphraseButton.addEventListener('click', () => {
@@ -81,8 +79,13 @@ catchphraseButton.addEventListener('click', () => {
 });
 
 function displayStats() {
-    // change the text contentof the reportEl to tell the user how many times they've changed each piece of the state
-    const statsString = makeStatsString(); // call this function with the correct arguments
+    // change the text content of the reportEl to tell the user how many times they've changed each piece of the state
+
+    reportEl.textContent = '';
+    
+    const statsString = makeStatsString(headChangeCount, middleChangeCount, bottomChangeCount); // call this function with the correct arguments
+
+    reportEl.append(statsString);
 }
 
 function displayCatchphrases() {
@@ -96,6 +99,7 @@ function displayCatchphrases() {
     for (let catchphrase of catchphraseArray) {
         const p = document.createElement('p');
         p.textContent = catchphrase;
+        p.classList.add('catchphrase');
         catchphrasesEl.append(p);
     }
 }
