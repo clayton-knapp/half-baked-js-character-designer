@@ -33,7 +33,13 @@ headDropdown.addEventListener('change', () => {
     // console.log(headChangeCount);
 
     // update the dom for the head
-    headEl.src = `./assets/${headSelected}-head.png`;
+    // headEl.src = `./assets/${headSelected}-head.png`;
+    headEl.textContent = '';
+    const imageEl = document.createElement('img');
+    imageEl.src = `./assets/${headSelected}-head.png`;
+    headEl.append(imageEl);
+
+
     // update the stats to show the new count
     displayStats();
 });
@@ -45,7 +51,13 @@ middleDropdown.addEventListener('change', () => {
     // increment the middle change count state
     middleChangeCount++;
     // update the dom for the middle
-    middleEl.src = `./assets/${middleSelected}-middle.png`;
+    // middleEl.src = `./assets/${middleSelected}-middle.png`;
+    middleEl.textContent = '';
+    const imageEl = document.createElement('img');
+    imageEl.src = `./assets/${middleSelected}-middle.png`;
+    middleEl.append(imageEl);
+
+
     // update the stats to show the new count
     displayStats();
 });
@@ -57,7 +69,13 @@ bottomDropdown.addEventListener('change', () => {
     // increment the bottom change count state
     bottomChangeCount++;
     // update the dom for the bottom
-    bottomEl.src = `./assets/${bottomSelected}-pants.png`;
+    // bottomEl.src = `./assets/${bottomSelected}-pants.png`;
+    bottomEl.textContent = '';
+    const imageEl = document.createElement('img');
+    imageEl.src = `./assets/${bottomSelected}-pants.png`;
+    bottomEl.append(imageEl);
+
+
     // update the stats to show the new count
     displayStats();
 
